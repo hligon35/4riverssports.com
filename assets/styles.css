@@ -130,7 +130,7 @@ dd {
   position: absolute;
   inset: auto 0 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
 }
 
 .brand {
@@ -149,7 +149,6 @@ dd {
   border-radius: 14px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(194, 201, 209, 0.22);
 }
 
 .brand-logo {
@@ -217,7 +216,6 @@ dd {
 .page-hero {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   background: linear-gradient(145deg, rgba(9, 19, 33, 0.96), rgba(6, 13, 23, 0.88));
   box-shadow: var(--shadow);
@@ -373,7 +371,6 @@ dd {
 .story-grid article,
 .why-grid article,
 .faq-preview-grid article {
-  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface-soft);
   box-shadow: var(--shadow);
@@ -396,7 +393,6 @@ dd {
 .volunteer-banner {
   align-items: center;
   justify-content: space-between;
-  border: 1px solid rgba(194, 201, 209, 0.24);
   border-radius: var(--radius-lg);
   padding: 1.2rem 1.4rem;
   background: linear-gradient(90deg, rgba(75, 168, 255, 0.12), rgba(214, 221, 230, 0.08));
@@ -433,7 +429,9 @@ dd {
 .faq-preview-grid,
 .story-grid,
 .program-detail-grid,
-.registration-grid {
+.registration-grid,
+.image-showcase-grid,
+.support-media-layout {
   display: grid;
   gap: 1rem;
 }
@@ -478,7 +476,6 @@ dd {
 
 .registration-card dl div {
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .registration-card dl div:last-child {
@@ -508,7 +505,6 @@ dd {
   display: grid;
   gap: 0.65rem;
   padding: 1.4rem;
-  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.03);
 }
@@ -519,6 +515,61 @@ dd {
 
 .site-footer a:hover {
   color: var(--text);
+}
+
+.image-showcase-section .section-heading p:last-child,
+.support-strip p,
+.support-copy-card p {
+  max-width: 44rem;
+}
+
+.image-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--shadow);
+}
+
+.image-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-card-large {
+  min-height: 21rem;
+}
+
+.image-card-tall {
+  min-height: 21rem;
+}
+
+.image-card-wide {
+  min-height: 20rem;
+}
+
+.image-card-portrait {
+  min-height: 28rem;
+}
+
+.support-copy-card {
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--surface-soft);
+  box-shadow: var(--shadow);
+}
+
+.support-copy-card .button {
+  width: fit-content;
+}
+
+.volunteer-media-layout .support-copy-card {
+  min-height: 28rem;
 }
 
 .inner-page-shell .site-footer {
@@ -543,8 +594,19 @@ dd {
   .story-grid,
   .program-detail-grid,
   .registration-grid,
+  .image-showcase-grid,
+  .support-media-layout,
   .site-footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-card-large {
+    min-height: 28rem;
+  }
+
+  .image-card-tall,
+  .image-card-wide {
+    min-height: 28rem;
   }
 }
 
@@ -560,6 +622,10 @@ dd {
   .program-detail-grid,
   .registration-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .image-showcase-grid {
+    grid-template-columns: 1.35fr 0.85fr;
   }
 
   .story-grid {
@@ -583,7 +649,6 @@ dd {
     flex-direction: column;
     align-items: stretch;
     padding: 0.8rem;
-    border: 1px solid var(--line);
     border-radius: 24px;
     background: rgba(7, 15, 24, 0.98);
     box-shadow: var(--shadow);
